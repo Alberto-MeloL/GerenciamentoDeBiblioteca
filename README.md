@@ -50,4 +50,10 @@ __Recursos:__
 - Laravel Framework;
 - PostgreSQL Database;
 
-![Cronograme de classe/uso](Imagens/diagrama-classe-uso.png)
+## Diagrama de Classe/Uso
+
+![Diagrama de classe/uso](Imagens/diagrama-classe-uso.png)
+
+## Diagrama de Fluxo
+
+![Diagrama de fluxo](Imagens/diagrama-fluxo.png)
