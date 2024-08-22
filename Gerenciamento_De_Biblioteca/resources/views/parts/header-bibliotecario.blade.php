@@ -7,10 +7,10 @@
                     <label for="livros">Livros</label>
                     <select name="livros" id="livros" aria-placeholder="Usuários">
                         <option value=""></option>
-                        <option value="">Listar livros</option>
-                        <option value="">Editar livros</option>
-                        <option value="">Remover livros</option>
-                        <option value="">Adicionar livros</option>
+                        <option value="{{route('livro.listar')}}">Listar livros</option>
+                        <option value="{{route('livro.editar')}}">Editar livros</option>
+                        <option value="{{route('livro.remover')}}">Remover livros</option>
+                        <option value="{{route('livro.adicionar')}}">Adicionar livros</option>
 
                     </select></li>
 
@@ -38,10 +38,29 @@
             </div>
 
             <div class="sair">
+                <form action="{{route('logout')}}" method="post">
+                @csrf
                 <input class="btn-sair" type="submit" value="Sair">
+                </form>
             </div>
         </div>
         </nav>
     </header>
 </div>
 
+<script>
+    // Função para redirecionar baseado na opção selecionada
+    function handleSelectChange(event) {
+        const selectedValue = event.target.value;
+        if (selectedValue) {
+            window.location.href = selectedValue;
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Adiciona ouvintes de eventos para todos os selects
+        document.querySelectorAll('select').forEach(select => {
+            select.addEventListener('change', handleSelectChange);
+        });
+    });
+</script>

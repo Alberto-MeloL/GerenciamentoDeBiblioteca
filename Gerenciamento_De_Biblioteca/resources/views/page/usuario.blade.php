@@ -5,7 +5,11 @@
     <div class="livros">
         <img src="image/livro-da-verdade.png" alt="Livro">
         <div class="acoes-livro">
-            <input class="btn-ler-livro" type="submit" value="Ver">
+            <form action="{{route('logout')}}" method="post">
+
+                <input class="btn-ler-livro" type="submit" value="Ver" >
+
+            </form>
         </div>
     </div>
 </div>

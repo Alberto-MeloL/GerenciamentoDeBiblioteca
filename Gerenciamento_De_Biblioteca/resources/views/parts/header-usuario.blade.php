@@ -18,7 +18,10 @@
                 </div>
 
                 <div class="sair">
-                    <input class="btn-sair" type="submit" value="Sair">
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <input class="btn-sair" type="submit" value="Sair">
+                    </form>
                 </div>
             </div>
         </nav>

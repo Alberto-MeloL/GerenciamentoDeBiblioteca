@@ -2,18 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class Usuario extends Model
+class Usuario extends Authenticatable
 {
-    use HasFactory;
+    use Notifiable;
 
     protected $fillable = [
-        'nome_usuario',
-        'email_usuario',
-        'senha_usuario',
-        'livro_alugado',
-        'tipo'
+        'nome_usuario', 'email_usuario', 'senha_usuario', 'tipo',
     ];
+
+    protected $hidden = [
+        'senha_usuario', 'remember_token',
+    ];
+
+    public function getAuthPassword()
+    {
+        return $this->senha_usuario;
+    }
 }
