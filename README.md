@@ -2,7 +2,6 @@
 
 ## Projeto Gerenciamento de Bibliotecas -  Avaliação Somativa Tarde
 
-
 ### Escopo:
 
 O Gerenciamento de Biblioteca é uma aplicação web, que permitirá usuários se cadastrar no site, alugar e devolver livros, terá um bibliotecário que irá gerenciar tudo o que acontece na biblioteca, tendo um CRUD de (usuários, bibliotecário, devolução).
@@ -193,6 +192,24 @@ Suporte técnico e FAQs.
   - Atributos: `id`, `nome`, `email`, `senha`.
   - Métodos: `cadastrarLivro(livro)`, `editarLivro(livro)`, `removerLivro(livro)`, `registrarEmprestimo(emprestimo)`, `devolverLivro(emprestimo)`.
 
+## Diagrama de Uso
+
+# Atores:
+
+Bibliotecário -
+Usuário -
+Administrador
+
+Bibliotecário -> (Gerenciar Livros)
+Bibliotecário -> (Gerenciar Usuários)
+Bibliotecário -> (Consultar Empréstimos)
+Bibliotecário -> (Emitir Multas)
+Bibliotecário -> (Gerenciar Configurações do Sistema)
+
+Usuário -> (Consultar Catálogo de Livros)
+Usuário -> (Reservar Livro)
+Usuário -> (Devolver Livro)
+Usuário -> (Visualizar Multas)
 
 ## Diagrama de Fluxo
 
